@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 3 D</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .inputs {
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #renderBtn {
+            display: block;
+            margin: 20px auto;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+
+        body {
+            background-color: skyblue;
+        }
+    </style>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "/three.module.js",
+            "three/addons/": "./jsm/"
+        }
+    }
+</script>
+</head>
+
+<body>
+    <div class="inputs">
+        <label for="file">Select your file :</label>
+        <input type="file" name="file" id="getFile">
+        <input type="button" value="get" id="renderBtn">
+    </div>
+    <div id="model"></div>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
