@@ -29,7 +29,7 @@ let hlight, light, light2, light3, light4, directionalLight;
 
 function init() {
 
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.25, 100);
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.01, 1000);
     camera.position.set(-5, 2, -5);
 
     scene = new THREE.Scene();
@@ -39,7 +39,7 @@ function init() {
     hlight = new THREE.AmbientLight(0x404040, 100);
     scene.add(hlight);
 
-    directionalLight = new THREE.DirectionalLight(0xffffff, 20);
+    directionalLight = new THREE.DirectionalLight(0xffffff, 10);
     directionalLight.position.set(0, 1, 0);
     directionalLight.castShadow = true;
     scene.add(directionalLight);
@@ -104,8 +104,8 @@ function init() {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.addEventListener('change', render);
-    controls.minDistance = 1;
-    controls.maxDistance = 90;
+    controls.minDistance = 0.1;
+    controls.maxDistance = 900;
     controls.target.set(0, 0, 0);
     controls.update();
 
